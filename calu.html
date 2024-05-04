@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<head>
+    <title>Calculator</title>
+    <link rel="stylesheet" a href="calu.css">
+  
+</head>
+<body>
+    <div class="Calculator">
+        <input class="dig" type="text" id="result" placeholder="0" disabled>
+        <div class="btn">
+        <button class="red" onclick="clearResult()">AC</button>
+        <button class="red" onclick="del()">DE</button>
+        <button class="Orange" onclick="getResult('%')">%</button>
+        <button class="Orange" onclick="getResult('/')">/</button>
+    </div>
+    <div class="btn">
+        <button onclick="getResult('7')">7</button>
+        <button onclick="getResult('8')">8</button>
+        <button onclick="getResult('9')">9</button>
+        <button class="Orange" onclick="getResult('*')">*</button>
+    </div>
+    <div class="btn">
+        <button onclick="getResult('4')">4</button>
+        <button onclick="getResult('5')">5</button>
+        <button onclick="getResult('6')">6</button>
+        <button class="Orange" onclick="getResult('-')">-</button>
+    </div>
+    <div class="btn">
+        <button onclick="getResult('1')">1</button>
+        <button onclick="getResult('2')">2</button>
+        <button onclick="getResult('3')">3</button>
+        <button class="Orange" onclick="getResult('+')">+</button>
+        </div>
+        <div class="btn">
+        <button onclick="getResult('00')">00</button>
+        <button onclick="getResult('0')">0</button>
+        <button class="gray" onclick="getResult('.')">.</button>
+        <button class="Green" onclick="getResult('=')">=</button>
+    </div>
+    <script>
+        let result=document.getElementById("result");
+    function getResult(value){
+        if(value==="="){
+            result.value=eval(result.value)
+        }
+        else{
+            result.value+=value;
+        }
+    }
+    function clearResult(){
+        result.value="";
+    }
+    function del(){
+        result.value = result.value.slice(0,-1);
+    }
+      </script>
+</body>
+</html>
